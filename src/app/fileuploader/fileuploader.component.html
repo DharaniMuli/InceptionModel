@@ -1,0 +1,36 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light navbarstyle">
+  <h1 class="mainheading">Inception Model</h1>
+</nav>
+
+<div class="fileuploadstyle">
+  <div>
+    <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+      <div>
+        <input type="file" name="profile" (change)="onFileSelect($event)"/>
+        <span><button class="btn btn-floating btn-info" type="submit">Upload</button></span>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6" style="margin-left: 20em;">
+    <img [src]="url" class="img-thumbnail" height="300px" width="300px">
+  </div>
+
+</div>
+
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label = "All DataSets">
+    <div class="tabstyle">
+
+      <h2 *ngIf="ImageUploaded == false; else elseBlock" style="color: #563d7c">Please upload an image to view the visualization!!</h2>
+      <ng-template #elseBlock>
+        <h2 style="color: #563d7c">Statistics of the image</h2>
+      </ng-template>
+    </div>
+  </mat-tab>
+  <mat-tab label = "Selected Class">
+    <div class="tabstyle">
+      <h2 style="color: #563d7c">Please upload an image to view the visualization</h2>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

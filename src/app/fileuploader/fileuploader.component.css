@@ -1,0 +1,29 @@
+.navbarstyle{
+  /*background-color: #563d7c;*/
+  border-bottom-color: coral;
+  height: 3.8em;
+  /*width: 200px;*/
+  opacity: 1;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #e2e2e214, #c9d6ff0d);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fffbfb00, #f0f0f30d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: 1px 0px 9px 0px rgba(105, 94, 105, 0.33);
+  -moz-box-shadow: 1px 0px 9px 0px rgba(105, 94, 105, 0.33);
+  box-shadow: 1px 0px 9px 0px #563d7c;
+}
+.mainheading{
+  font-weight: 400;
+  color: #563d7c;
+}
+.fileuploadstyle{
+  margin-top: 63px;
+  height: 16em;
+  background-color: #dcdcdc40;
+  /*background-color: #1abc9c;*/
+}
+.tabstyle{
+  margin-top: 20px;
+  margin-left: 3em;
+
+}
+
