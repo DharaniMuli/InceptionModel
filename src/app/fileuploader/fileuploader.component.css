@@ -18,12 +18,44 @@
 .fileuploadstyle{
   margin-top: 63px;
   height: 16em;
-  background-color: #dcdcdc40;
-  /*background-color: #1abc9c;*/
+  /*background-color: #dcdcdc40;*/
+  background-color: #1abc9c;
+  margin-right:-20px;
 }
 .tabstyle{
   margin-top: 20px;
   margin-left: 3em;
 
+}
+
+.imageerrormessage{
+  color: white;
+
+}
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after { clear: both; }
+
+input{
+  display: none;
+}
+.mat-raised-button{
+  cursor: pointer;
+}
+/*.image-preview-container {*/
+  /*position: relative;*/
+/*}*/
+.img-preview {
+  background: center center no-repeat;
+  /*height:194px;*/
+  /*width:285px;*/
+
+  /*height:200px;*/
+  /*width:300px;*/
 }
 

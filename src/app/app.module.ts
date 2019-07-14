@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { FileuploaderComponent } from './fileuploader/fileuploader.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTabsModule} from '@angular/material';
-
+import {MatButtonModule} from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import {MatTabsModule} from '@angular/material';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
