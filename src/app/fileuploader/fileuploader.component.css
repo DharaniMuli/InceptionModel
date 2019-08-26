@@ -5,8 +5,9 @@
   /*width: 200px;*/
   opacity: 1;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #e2e2e214, #c9d6ff0d);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #fffbfb00, #f0f0f30d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background: -webkit-linear-gradient(to left, #e2e2e214, #c9d6ff0d);  !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to left, #fffbfb00, #f0f0f30d); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+  background: white;
   -webkit-box-shadow: 1px 0px 9px 0px rgba(105, 94, 105, 0.33);
   -moz-box-shadow: 1px 0px 9px 0px rgba(105, 94, 105, 0.33);
   box-shadow: 1px 0px 9px 0px #563d7c;
@@ -17,9 +18,9 @@
 }
 .fileuploadstyle{
   margin-top: 63px;
-  height: 16em;
-  /*background-color: #dcdcdc40;*/
-  background-color: #1abc9c;
+  height: 10em;
+  background-color: #dcdcdc40;
+  /*background-color: #1abc9c;*/
   margin-right:-20px;
 }
 .tabstyle{
@@ -50,12 +51,16 @@ input{
 /*.image-preview-container {*/
   /*position: relative;*/
 /*}*/
-.img-preview {
-  background: center center no-repeat;
-  /*height:194px;*/
-  /*width:285px;*/
 
-  /*height:200px;*/
-  /*width:300px;*/
+.tp-h2 {
+  margin: 10px;
 }
-
+.tp-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.tp-margin {
+  margin: 0 10px;
+}

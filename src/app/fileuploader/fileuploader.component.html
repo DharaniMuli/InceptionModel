@@ -4,68 +4,83 @@
 
 <div class="fileuploadstyle">
   <div class="row">
-    <div class="col-lg-1 col-md-2 col-sm-1 col-xs-0"></div>
-    <div class="float-left col-lg-3 col-md-3 col-sm-3 col-xs-2">
+    <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+    <div class="float-left col-lg-4 col-md-3 col-sm-3 col-xs-2">
 
-        <div style="padding-top:6em">
+        <div style="padding-top:4em">
 
-          <!--<form [formGroup] = "uploadForm">-->
-          <!--<button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()" (ngSubmit)="onSubmit()">>-->
-            <!--<label for="fileToUpload">Upload</label>-->
-          <!--</button>-->
-          <!--<input id="fileToUpload" type="file" name="profile" (change)="onFileSelect($event)">-->
-          <!--</form>-->
-          <!--<input type="file" name="profile" (change)="onFileSelect($event)"/>-->
+          <p><input type="file"  accept="image/*" name="image" id="file"  (change)="loadFile($event)" style="display: none;"></p>
+         <button mat-raised-button color="primary" type="button"><label for="file" style="cursor: pointer;">Upload Image</label></button>
 
-          <label class="image-upload-container mat-raised-button">
-            <span>Select Image</span>
-            <input #imageInput
-                   type="file"
-                   accept="image/*"
-                   (change)="processFile(imageInput)">
-          </label>
         </div>
-
-
 
     </div>
     <div class="col-lg-5 col-md-4 col-sm-5 col-xs-12 imageerrormessage clearfix">
-      <h2 *ngIf="ImageNotUploaded == true; else ImageUploaded" class="imageerrormessage" style="padding-top:3em">Please upload an image!!</h2>
-      <ng-template #ImageUploaded>
-        <div *ngIf="selectedFile"  class="" style="padding-top:1em;">
-            <img class="img-preview" [attr.width]="'200px'" [attr.height]="'200px'"
-                 [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}"/>
-
-
-          <!--<img [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}" class="img-thumbnail" max-height="50px" width="300px">-->
-        </div>
-
-      </ng-template>
+      <img  style="padding-top:1em" id="output" width="200"/>
+      <!--<h2 *ngIf="ImageNotUploaded == true; else ImageUploaded" class="imageerrormessage" style="padding-top:3em">Please upload an image!!</h2>-->
+      <!--<ng-template #ImageUploaded>-->
+        <!--<div *ngIf="selectedFile"  class="" style="padding-top:1em;">-->
+          <!--<img id="output" width="200" />-->
+        <!--</div>-->
+      <!--</ng-template>-->
     </div>
-    <div class="float-right col-lg-2 col-md-3 col-sm-3 col-xs-2" style="padding-top: 6em">
-      <span><button mat-raised-button type="submit">Submit</button></span>
-    </div>
+    <!--<div class="float-right col-lg-2 col-md-3 col-sm-3 col-xs-2" style="padding-top: 6em">-->
+      <!--<span><button mat-raised-button type="submit">Submit</button></span>-->
+    <!--</div>-->
   </div>
 </div>
 
-<mat-tab-group animationDuration="0ms">
+<mat-tab-group animationDuration="0ms" (selectedTabChange)="tabChanged($event)">
   <mat-tab label = "All DataSets">
     <div class="tabstyle">
+      <div id="chartdiv0" style="width: 100%; height: 500px"></div>
 
-      <h2 *ngIf="tab1_ImageNotUploaded == true; else tab1_ImageUploaded" style="color: #563d7c">Please upload an image to view the visualization!!</h2>
-      <ng-template #tab1_ImageUploaded>
-        <h2 style="color: #563d7c">Statistics of the image</h2>
-      </ng-template>
+      <!--<h2 *ngIf="tab1ImageNotUploaded == true; else tab1ImageUploaded" style="color: #563d7c">Please upload an image to view the visualization!!</h2>-->
+      <!--<ng-template #tab1ImageUploaded>-->
+      <!--</ng-template>-->
     </div>
   </mat-tab>
-  <mat-tab label = "Selected Class">
+  <mat-tab label = "Selected Class(Part1)">
+    <div class="tabstyle">
+      <!--<mat-checkbox>ImageNet</mat-checkbox>-->
+      <!--<mat-checkbox>Caltech101</mat-checkbox>-->
+      <!--<mat-checkbox>Caltech256</mat-checkbox>-->
+      <!--<mat-checkbox>CIFAR100</mat-checkbox>-->
+
+      <div id="chartdiv1" style="width: 100%; height: 500px"></div>
+
+      <!--<h2 *ngIf="tab2ImageNotUploaded == true; else tab2ImageUploaded" style="color: #563d7c">Please upload an image to view the visualization!!</h2>-->
+      <!--<ng-template #tab2ImageUploaded>-->
+        <!--<h2 style="color: #563d7c">Statistics of the image</h2>-->
+      <!--</ng-template>-->
+    </div>
+  </mat-tab>
+  <mat-tab label = "Selected Class(Part2)">
     <div class="tabstyle">
 
-      <h2 *ngIf="tab2_ImageNotUploaded == true; else tab2_ImageUploaded" style="color: #563d7c">Please upload an image to view the visualization!!</h2>
-      <ng-template #tab2_ImageUploaded>
-        <h2 style="color: #563d7c">Statistics of the image</h2>
-      </ng-template>
+      <div id="chartdiv2" style="width: 100%; height: 500px"></div>
+
+    </div>
+  </mat-tab>
+  <mat-tab label = "Selected Class(Part3)">
+    <div class="tabstyle">
+
+      <div id="chartdiv3" style="width: 100%; height: 500px"></div>
+
+    </div>
+  </mat-tab>
+  <mat-tab label = "Selected Class(Part3)">
+    <div class="tabstyle">
+      <mat-checkbox class = "tp-margin" color="primary" [(ngModel)]="ImageNet" (click)="openDialog()">ImageNet</mat-checkbox>
+      <mat-checkbox class = "tp-margin" color="primary" [(ngModel)]="Caltech101">Caltech101</mat-checkbox>
+      <mat-checkbox class = "tp-margin" color="primary" [(ngModel)]="Caltech256">Caltech256</mat-checkbox>
+      <mat-checkbox class = "tp-margin" color="primary" [(ngModel)]="CIFAR100">CIFAR100</mat-checkbox>
+
     </div>
   </mat-tab>
 
 </mat-tab-group>
+
+<div>
+
+</div>
